@@ -1,5 +1,11 @@
 <?php 
-	require_once ("crud-oop-class-store-product.php");
+	session_start();
+	$first_name=$_SESSION['user_first_name'];
+ 	$last_name=$_SESSION['user_last_name'];
+
+ 	if(!empty($first_name) && !empty($last_name))
+ 	{
+	require_once ("C:xampp/htdocs/Projects/PHP/Manage_Your_Shop/crud-oop-class.php");
 	$obj = new Database();
 ?>
 <!doctype html>
@@ -17,12 +23,11 @@
     	<h1 class="bg-secondary text-center text-light offset-3 col-sm-6">Store Product List!</h1><hr>
     	<?php
     		$limit = "5"; 
-    		$join = " inner join product on store_product.store_product_name = product.product_id";
-			$row  = " store_product.store_product_id,product.product_name,store_product.store_product_quantity,store_product.store_product_entrydate ";
+    		$join = "product on store_product.store_product_name = product.product_id";
+				$row  = "store_product.store_product_id,product.product_name,store_product.store_product_quantity,store_product.store_product_entrydate ";
 
-			$obj->select("store_product",$row,$join,null,null,$limit);
-			$result = $obj->getResults();
-
+				$obj->select("store_product",$row,$join,null,null,$limit);
+				$result = $obj->getResults();
     		echo "<table border='5' cellpadding='10px' width = '70%' class='offset-2 col-sm-8'>
 					<thead>
 						<tr>
@@ -51,16 +56,18 @@
 			echo "</table>";
 
     		echo $obj->pagination("store_product",$join,null,$limit);
-			echo "<br>";
-    		echo "<a href='store_product_add.php' class='btn-outline-success'>Want to add new product in your store? CLick here...</a>";
+				echo "<br>";
+    		echo "<button class='btn-outline-dark bg-dark offset-5'><a class='text-success' href='store_product_add.php'>Want to add new store product? click here...</button>";
     	?>
-    	<br>
-    	<br>
-    	<b class="text-center offset-4">&copy; All Right Reserved by Rakibuzzaman Rid</b>
 	</div>
 
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+      <b class="text-center offset-6 text-dark">&copy;<?php echo date("Y")?></b><br>
+	<b class="text-center offset-5 text-dark">&copy; All Right Reserved by Rakibuzzaman Rid</b>
   </body>
 </html>
+<?php
+	}
+?>

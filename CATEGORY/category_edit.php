@@ -1,6 +1,11 @@
 <?php 
-	require_once ("crud-oop-class.php");
+	session_start();
+	$first_name=$_SESSION['user_first_name'];
+ 	$last_name=$_SESSION['user_last_name'];
 
+ 	if(!empty($first_name) && !empty($last_name))
+ 	{
+	require_once ("C:xampp/htdocs/Projects/PHP/Manage_Your_Shop/crud-oop-class.php");
 	$obj = new Database();
 
 	if(isset($_GET['id']))
@@ -77,4 +82,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
   </body>
 </html>
+<?php
+	}
+?>
 

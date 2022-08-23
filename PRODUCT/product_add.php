@@ -1,5 +1,11 @@
 <?php  
-	require_once ("crud-oop-class-product.php");
+	session_start();
+	$first_name=$_SESSION['user_first_name'];
+ 	$last_name=$_SESSION['user_last_name'];
+
+ 	if(!empty($first_name) && !empty($last_name))
+ 	{
+	require_once ("C:xampp/htdocs/Projects/PHP/Manage_Your_Shop/crud-oop-class.php");
 	$obj = new Database();
 
 	if(isset($_POST['submit']))
@@ -70,6 +76,8 @@
 
 				  <button type="submit" name="submit" class="btn btn-outline-danger">Submit</button>
 			</form>
+			<?php echo "<button class='btn-outline-dark bg-dark offset-5'><a class='text-success' href='product_list.php'>Want to see product list? click here...</button>";
+			?>
   		
 	</div>
 
@@ -78,3 +86,8 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
   </body>
 </html>
+<b class="text-center offset-6 text-dark">&copy;<?php echo date("Y")?></b><br>
+	<b class="text-center offset-5 text-dark">&copy; All Right Reserved by Rakibuzzaman Rid</b>
+<?php
+	}
+?>

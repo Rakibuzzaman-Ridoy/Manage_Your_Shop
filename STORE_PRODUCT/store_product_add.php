@@ -1,5 +1,11 @@
 <?php 
-	require_once ("crud-oop-class-store-product.php");
+	session_start();
+	$first_name=$_SESSION['user_first_name'];
+ 	$last_name=$_SESSION['user_last_name'];
+
+ 	if(!empty($first_name) && !empty($last_name))
+ 	{
+	require_once ("C:xampp/htdocs/Projects/PHP/Manage_Your_Shop/crud-oop-class.php");
 	$obj = new Database();
 
 	if(isset($_POST['submit']))
@@ -52,8 +58,7 @@
 				 	<label for="exampleInputEmail1">Product Name</label>
 				 	<select name="store_product_name" required>
 				 		<?php 				 			
-				 			$join = " right join product on store_product.store_product_name = product.product_id;";
-							$obj->select("store_product","product.product_id,product.product_name",$join,null,null,null);
+				 			$obj->select("product","*",null,null,null,null);
 							$result = $obj->getResults();
 
 							foreach ($result as list("product_id"=>$product_id,"product_name"=>$product_name))
@@ -66,11 +71,18 @@
 
 				  <button type="submit" name="submit" class="btn btn-outline-danger">Submit</button>
 			</form>
+				<?php echo "<button class='btn-outline-dark bg-dark offset-5'><a class='text-success' href='store_product_list.php'>Want to see store product list? click here...</button>";
+			?>
   		
 	</div>
 
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <b class="text-center offset-6 text-dark">&copy;<?php echo date("Y")?></b><br>
+	<b class="text-center offset-5 text-dark">&copy; All Right Reserved by Rakibuzzaman Rid</b>
   </body>
 </html>
+<?php
+	}
+?>
