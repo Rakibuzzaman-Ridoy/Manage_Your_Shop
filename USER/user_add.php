@@ -81,4 +81,7 @@
 </html>
 <?php
 	}
+	else{
+		header("Location: ../login.php");
+	}
 ?>

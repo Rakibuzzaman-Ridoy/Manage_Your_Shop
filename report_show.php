@@ -126,5 +126,8 @@
 <b class="text-center offset-6 text-dark">&copy;<?php echo date("Y")?></b><br>
 	<b class="text-center offset-5 text-dark">&copy; All Right Reserved by Rakibuzzaman Rid</b>
     <?php
-	    }
-    ?>
+	}
+	else{
+		header("Location: login.php");
+	}
+?>
