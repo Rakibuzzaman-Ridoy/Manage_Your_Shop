@@ -24,7 +24,7 @@
 		}
 		else
 		{
-			echo "Failed to login!";
+			$failed = "alert('Failed to login!')";
 		}
 	}
 ?>
@@ -52,17 +52,25 @@
 		    <label for="exampleInputPassword1">Password</label>
 		    <input type="password" name="user_password" class="form-control" id="exampleInputPassword1" placeholder="Enter your password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}"
   			title="Must contain at least one  number and one uppercase and lowercase letter, and at least 6 or more characters" required>
-		  </div>
-		  
+		  </div>		  
 		  <button type="submit" name="login"class="btn btn-primary">Login</button>
+		  <span class="text-danger">
+			<?php 
+				 echo '<script type ="text/JavaScript">';  
+				 echo $failed;  
+				 echo '</script>'; 
+			?>
+		  </span>
+		 
 	</form>
 
-			<?php echo "<button class='btn-outline-dark bg-dark offset-4'><a class='text-success' href='USER/user_add.php'>Want to add new user? click here...</button>";
+			<?php echo "<button class='btn-outline-dark bg-dark offset-4'><a class='text-success' href='USER/user_add.php'>Want to add new user? click here...</a></button>";
 			?>
   
 	 </div>
 	 <b class="text-center offset-5 text-dark">&copy;<?php echo date("Y")?></b><br>
 	<b class="text-center offset-4 text-dark">&copy; All Right Reserved by Rakibuzzaman Rid</b>
+
 
 
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>

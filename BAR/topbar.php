@@ -15,6 +15,6 @@
 					<?php 
 						echo "<p>  Login as <b>".$_SESSION['user_first_name']." ".$_SESSION['user_last_name']."</b></p>";
 					?>	
-				</div>
+			</div>
 
 </div>

@@ -46,7 +46,11 @@
 			<div class="container-fluid border-bottom border-success"><!--top bar-->
 				<div class="row">
 					<div class="col-sm-9">
-						<h1 class="offset-6 text-center border-bottom border-bold">Manage Your Shop!</h1>	
+						<h1 class="offset-6 text-center border-bottom border-bold">Manage Your Shop!</h1>
+						<a href="../dashboard.php">
+                            <i class="fa-solid fa-house text-success offset-1 fa-2x"></i>
+							<i class="fa-solid text-dark fa-1x fa-house-crack"></i>
+                        </a>	
 						<?php
 							date_default_timezone_set("ASIA/DHAKA");
 							echo "<b class='offset-1 text-info'>" . date('D-M-Y').' Time: '.date("h:i:sa")."</b>";
@@ -132,7 +136,7 @@
 				<div class="col-sm-9 border-left border-success p-4"><!--Start of right body Row-->
 					<div class=" border-bottom p-3"><!--Start of body Row first portion-->
 						<div class="jumbotron"><!--Page Add category-->
-							<h1 class="bg-secondary text-center text-light offset-3 col-sm-6">Add New Category!</h1><hr>
+							<h1 class="bg-secondary text-center text-light offset-2 col-sm-8">Add New Category!</h1><hr>
 								<form action="<?php echo $_SERVER['PHP_SELF']?>" method="POST" class="offset-2 col-sm-8">
 									<div class="form-group">
 										<label for="exampleInputEmail1">Category Name</label>

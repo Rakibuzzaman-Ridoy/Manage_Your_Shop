@@ -14,12 +14,47 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+	
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css" integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
     <title>Report View!</title>
   </head>
   <body id="outprint">
-    <h1 class="bg-dark text-light text-center ">Manage Your Shop!</h1><hr>
-    <div class="jumbotron">
+    <div class="container bg-light">
+        <div class="container-fluid border-bottom border-success"><!--top bar-->
+                <div class="row">
+                    <div class="col-sm-9">
+                        <h1 class="offset-4 bg-success  text-light text-center border-bottom border-bold">
+                            <a href='dashboard.php' class="text-light text-decoration-none">Manage Your Shop!</a>
+                        </h1>	
+                                                
+                        <a href="dashboard.php">
+                            <i class="fa-solid fa-house text-success offset-1 fa-2x"></i>
+                        </a>
+                        <a href="report.php">
+                            <i class="fa-solid fa-arrow-left text-success fa-2x"></i>
+                        </a>
+                        <i class="fa-solid text-dark fa-skull-crossbones fa-2x"></i>
+                        
+                        <?php
+                            date_default_timezone_set("ASIA/DHAKA");
+                            echo "<b class='offset-4 text-dark'>" . date('D-M-Y').' Time: '.date("h:i:sa")."</b>";
+                        ?>
+                    </div>
+                    <div class="col-sm-3">
+                    <br>
+                    <button class="btn btn-outline-success text-light offset-7  btn-sm">
+                            <a href='logout.php' class="text-success text-decoration-none">Logout</a>
+                        </button>
+                        <?php 
+                            echo "<p>  Login as <b>".$_SESSION['user_first_name']." ".$_SESSION['user_last_name']."</b></p>";
+                        ?>	
+                </div>
+            </div>
+        </div>
+
+    
+        <div class="jumbotron">
         <!-- Store Product Report! -->
     	<h1 class="bg-dark text-danger text-center offset-3 col-sm-6">Store Product Report!</h1>
         
@@ -108,7 +143,8 @@
 			?>
             <br><br>
             <button class="printMe text-center offset-5 btn-outline-info bg-dark">Want to print report? Click here...</button>
-	</div>
+	    </div>
+    </div>
    
     
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
