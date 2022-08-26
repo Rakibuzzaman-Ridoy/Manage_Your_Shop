@@ -17,95 +17,18 @@
   </head>
   <body>
     <div class="container bg-light">
-		<div class="container-fluid border-bottom border-success"><!--top bar-->
-			<div class="row">
-				<div class="col-sm-9">
-					<h1 class="offset-6 text-center border-bottom border-bold">Manage Your Shop!</h1>	
-					<?php
-						date_default_timezone_set("ASIA/DHAKA");
-						echo "<b class='offset-1 text-info'>" . date('D-M-Y').' Time: '.date("h:i:sa")."</b>";
-					?>
-				</div>
-				<div class="col-sm-3">
-				<br>
-				<button class="btn btn-outline-success text-light offset-7  btn-sm">
-						<a href='logout.php' class="text-success text-decoration-none">Logout</a>
-					</button>
-					<?php 
-						echo "<p>  Login as <b>".$_SESSION['user_first_name']." ".$_SESSION['user_last_name']."</b></p>";
-					?>	
-				</div>
-
-			</div>
+		<div>
+			<?php
+				include "BAR/topbar.php"; //This is topbar!
+			?>
 		</div><!--end top bar-->
 
 		<div class="container-fluid"><!--body-->
 			<div class="row">
-				<div class="col-sm-3 bg-light p-0 m-0">
-					<h4 class="bg-success text-dark px-2 py-1">Category</h4>
-					<ul class="list-group">
-						<li class="list-group-item list-group-item-success p-1 m-1 ">
-							<a href='CATEGORY/category_add.php' class="text-dark text-decoration-none">Add Category<a>
-						</li>
-						<li class=" list-group-item list-group-item-success p-1 m-1">
-							<a href='CATEGORY/category_list.php' class="text-dark text-decoration-none">List of Category<a>
-						</li>
-					</ul>
-
-
-					<h4 class="bg-success text-dark px-2 py-1">Product</h4>
-					<ul class="list-group">
-						<li class="list-group-item list-group-item-success p-1 m-1 ">
-							<a href='PRODUCT/product_add.php' class="text-dark text-decoration-none">Add Product<a>
-						</li>
-						<li class=" list-group-item list-group-item-success p-1 m-1">
-							<a href='PRODUCT/product_list.php' class="text-dark text-decoration-none">List of Product<a>
-						</li>
-					</ul>
-
-
-
-					<h4 class="bg-success text-dark px-2 py-1">Store Product</h4>
-					<ul class="list-group">
-						<li class="list-group-item list-group-item-success p-1 m-1 ">
-							<a href='STORE_PRODUCT/store_product_add.php' class="text-dark text-decoration-none">Add Store Product<a>
-						</li>
-						<li class=" list-group-item list-group-item-success p-1 m-1">
-							<a href='STORE_PRODUCT/store_product_list.php' class="text-dark text-decoration-none">List of Store Product<a>
-						</li>
-					</ul>
-
-					<h4 class="bg-success text-dark px-2 py-1">Spend Product</h4>
-					<ul class="list-group">
-						<li class="list-group-item list-group-item-success p-1 m-1 ">
-							<a href='SPEND_PRODUCT/spend_product_add.php' class="text-dark text-decoration-none">Add Spend Product<a>
-						</li>
-						<li class=" list-group-item list-group-item-success p-1 m-1">
-							<a href='SPEND_PRODUCT/spend_product_list.php' class="text-dark text-decoration-none">List of Spend Product<a>
-						</li>
-					</ul>
-
-					<h4 class="bg-success text-dark px-2 py-1">User Portion</h4>
-					<ul class="list-group">
-						<li class="list-group-item list-group-item-success p-1 m-1 ">
-							<a href="USER/user_add.php" class="text-decoration-none text-dark">Add User</a>
-						</li>
-						<li class="list-group-item list-group-item-success p-1 m-1 ">
-						<a href="USER/user_list.php" class="text-decoration-none text-dark">User's List</a>
-						</li>
-					</ul>
-
-
-					<h4 class="bg-success text-dark px-2 py-1">Report Portion</h4>
-					<ul class="list-group">
-						<li class="list-group-item list-group-item-success p-1 m-1 ">
-							<a href='report.php' class="text-dark text-decoration-none">Request Report<a>
-					</ul>
-
-
-
-				</div>
-				<div class="col-sm-9 p-4"><!--Start of right body Row-->
+				<?php
+					include "BAR/leftbar.php"; //This is left bar!
+				?>
+				<div class="col-sm-9 border-left border-success p-4"><!--Start of right body Row-->
 					<div class="row border-bottom p-3"><!--Start of body Row first portion-->
 						<div class="col-sm-3 text-success">
 							<a href="CATEGORY/category_add.php" class="text-decoration-none text-dark">
@@ -136,9 +59,6 @@
 					</div><!--End of body Row first portion-->
 
 
-
-
-
 					<div class="row border-bottom p-4"><!--Start of body Row 2nd portion-->
 						<div class="col-sm-3 text-success">
 							<a href="STORE_PRODUCT/store_product_add.php" class="text-decoration-none text-dark">
@@ -167,11 +87,8 @@
 							</a>
 						</div>
 					</div><!--End of body Row 2nd portion-->
-
-
-
-
-				
+					
+					
 					<div class="row p-4"><!--Start of body Row 3rd portion-->
 						<div class="col-sm-3 text-success">
 							<a href="USER/user_add.php" class="text-decoration-none text-dark">
@@ -194,43 +111,14 @@
 						</div>
 					</div><!--End of body Row 3rd portion-->
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 				</div><!--end of right body Row-->
 			</div>
 		</div><!--end body-->
-
-		<div class="container-fluid border-top border-success p-2 text-dark p-0 m-0"><!--bottom bar-->
-			<b class="text-center offset-6 ">&copy;  2021-<?php echo date("Y")?></b><br>
-			<b class="text-center offset-5 ">&copy; All Right Reserved by Rakibuzzaman Rid</b>
-			<div class="offset-5 col-sm-5 text-success">
-							<a href="https://github.com/Rakibuzzaman-Ridoy" class="text-decoration-none text-dark">
-								<i class="fa-brands fa-github"></i>
-							</a>
-						</div>
-		</div><!--end bottom bar-->
+		<div class="continer-fluid">
+			<?php
+				include "BAR/bottombar.php"; //This is Bottom Bar!
+			?>
+		</div>
 
 	</div><!--end of container-->
 
