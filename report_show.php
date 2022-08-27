@@ -25,13 +25,13 @@
                 <div class="row">
                     <div class="col-sm-9">
                         <h1 class="offset-4 bg-success  text-light text-center border-bottom border-bold">
-                            <a href='dashboard.php' class="text-light text-decoration-none">Manage Your Shop!</a>
+                            <a href='../dashboard.php' class="text-light text-decoration-none">Manage Your Shop!</a>
                         </h1>	
                                                 
                         <a href="dashboard.php">
                             <i class="fa-solid fa-house text-success offset-1 fa-2x"></i>
                         </a>
-                        <a href="report.php">
+                        <a href="./report.php">
                             <i class="fa-solid fa-arrow-left text-success fa-2x"></i>
                         </a>
                         <i class="fa-solid text-dark fa-skull-crossbones fa-2x"></i>

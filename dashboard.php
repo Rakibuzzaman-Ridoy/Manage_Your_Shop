@@ -97,7 +97,7 @@
 							</a>
 						</div>
 						<div class="col-sm-3 text-success">
-							<a href="USER/user_lsit.php" class="text-decoration-none text-dark">
+							<a href="USER/user_list.php" class="text-decoration-none text-dark">
 								<i class="fa-solid fa-users fa-6x text-success"></i>
 								<p><b>List of User</b></p>
 							</a>

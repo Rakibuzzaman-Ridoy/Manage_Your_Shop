@@ -60,6 +60,10 @@
   </head>
   <body>
     <h1 class="bg-dark text-light text-center">Manage Your Shop!</h1>
+	<a href="../dashboard.php">
+                            <i class="fa-solid fa-house text-success offset-1 fa-2x"></i>
+							<i class="fa-solid text-dark fa-1x fa-house-crack"></i>
+                        </a>
     <hr/>
     <div class="jumbotron">
  		<h1 class="bg-secondary text-center text-light offset-3 col-sm-6">Update User List!</h1>

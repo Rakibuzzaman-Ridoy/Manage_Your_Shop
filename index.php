@@ -24,7 +24,7 @@
 		}
 		else
 		{
-			echo "Failed to login!";
+			$var = "Failed to login!";
 		}
 	}
 ?>
@@ -55,10 +55,16 @@
 		  </div>
 		  
 		  <button type="submit" name="login"class="btn btn-primary">Login</button>
+		  <span class="text-danger bg-dark offset-3">
+			<?php
+				echo "<b>".$var."</b>";
+			?>
+		</span>
+		  
 	</form>
 
-			<?php echo "<button class='btn-outline-dark bg-dark offset-4'><a class='text-success' href='USER/user_add.php'>Want to add new user? click here...</button>";
-			?>
+			<!-- <?php echo "<button class='btn-outline-dark bg-dark offset-5'><a class='text-success' href='USER/user_add.php'>Want to add new user? click here...</button>";
+			?> -->
   
 	 </div>
 	 <b class="text-center offset-5 text-dark">&copy;<?php echo date("Y")?></b><br>

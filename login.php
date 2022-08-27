@@ -40,6 +40,7 @@
   <body>
     <h1 class="bg-dark text-light text-center ">Manage Your Shop!</h1><hr>
     <div class="jumbotron">
+
  	 <h1 class="bg-secondary text-center text-light offset-3 col-sm-5">Login Form!</h1>
  	 <hr/>
  	 <form action="<?php echo $_SERVER['PHP_SELF']?>" method="POST" class="offset-3 col-sm-5">
@@ -61,8 +62,9 @@
 				 echo '</script>'; 
 			?>
 		  </span>
-		 
+		  </fieldset> 
 	</form>
+
 
 			<?php echo "<button class='btn-outline-dark bg-dark offset-4'><a class='text-success' href='USER/user_add.php'>Want to add new user? click here...</a></button>";
 			?>

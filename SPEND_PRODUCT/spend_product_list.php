@@ -28,7 +28,11 @@
 			<div class="container-fluid border-bottom border-success"><!--top bar-->
 				<div class="row">
 					<div class="col-sm-9">
-						<h1 class="offset-6 text-center border-bottom border-bold">Manage Your Shop!</h1>	
+						<h1 class="offset-6 text-center border-bottom border-bold">Manage Your Shop!</h1>
+						<a href="../dashboard.php">
+                            <i class="fa-solid fa-house text-success offset-1 fa-2x"></i>
+							<i class="fa-solid text-dark fa-1x fa-house-crack"></i>
+                        </a>	
 						<?php
 							date_default_timezone_set("ASIA/DHAKA");
 							echo "<b class='offset-1 text-info'>" . date('D-M-Y').' Time: '.date("h:i:sa")."</b>";
