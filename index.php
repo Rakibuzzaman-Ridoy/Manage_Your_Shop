@@ -1,3 +1,6 @@
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 <?php 
 	require_once "C:xampp\htdocs\Projects\PHP\Manage_Your_Shop\crud-oop-class.php";
 	session_start();
@@ -24,7 +27,10 @@
 		}
 		else
 		{
-			$var = "Failed to login!";
+			$failed = "alert('Failed to login!')";
+				 echo '<script type ="text/JavaScript">';  
+				 echo $failed;  
+				 echo '</script>'; 
 		}
 	}
 ?>
@@ -55,12 +61,6 @@
 		  </div>
 		  
 		  <button type="submit" name="login"class="btn btn-primary">Login</button>
-		  <span class="text-danger bg-dark offset-3">
-			<?php
-				echo "<b>".$var."</b>";
-			?>
-		</span>
-		  
 	</form>
 
 			<!-- <?php echo "<button class='btn-outline-dark bg-dark offset-5'><a class='text-success' href='USER/user_add.php'>Want to add new user? click here...</button>";
